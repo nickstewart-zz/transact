@@ -38,6 +38,7 @@ end
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
+# Basic HTTP Authentication 
 def auth
   @auth ||= Rack::Auth::Basic::Request.new(request.env)
 end
@@ -56,7 +57,7 @@ def authorized?
 end
 
 def authorize(username, password)
-  if (username=='[YOUR USERNAME HERE]' && password=='[YOUR PASSWORD HERE]') then
+  if (username=='admin' && password=='admin') then
     true
   else
     false
@@ -88,7 +89,7 @@ get '/' do
   slim :index
 end
 
-# Should display a table or all records containing the 
+# Displays a table of all records containing the 
 # search string within a specified date range.
 # Postcode regex (/(\b[A-Z]{1,2}[0-9][0-9A-Z]{0,1} {1,}\d[A-Z]{2}\b)/)
 get '/results' do  
