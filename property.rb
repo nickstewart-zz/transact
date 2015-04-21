@@ -138,6 +138,9 @@ form action="/results" method="get"
       option value="03" March
       option value="04" April
     |  2012
+  
+  h2 Enter location or post code
+  
   p  
     input type="text" name="search_string" 
     input type="Submit" value="Search"
